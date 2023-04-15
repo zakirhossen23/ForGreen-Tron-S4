@@ -7,7 +7,7 @@ export default async function useContract(privateKey) {
 	const solidityNode = 'https://api.nileex.io';
 	const eventServer = 'https://event.nileex.io';
 	const tronWeb = new TronWeb(fullNode, solidityNode, eventServer, privateKey);
-	contract = await tronWeb.contract().at('TPSazvJzv25M8P6tpb8maJ51x1mEMyYPns');
+	contract = await tronWeb.contract().at('TREtANk2e8WBHJ6uVSPp7bfnWT5xACrnKx');
 
 	return contract;
 }

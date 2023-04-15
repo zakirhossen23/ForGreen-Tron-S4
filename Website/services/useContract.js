@@ -13,7 +13,7 @@ export default function useContract() {
 				if (window.localStorage.getItem("login-type") === "tronlink"){
 					const contract = { contract: null, signerAddress: null }
 	
-					contract.contract =  await window?.tronWeb?.contract().at('TDSct4dc63ERBiVcurV6WB4fz8VAEaGbZP');
+					contract.contract =  await window?.tronWeb?.contract().at('TREtANk2e8WBHJ6uVSPp7bfnWT5xACrnKx');
 					contract.signerAddress =  window?.tronWeb?.defaultAddress?.base58;
 					window.contract = contract.contract;
 					setContractInstance(contract);
