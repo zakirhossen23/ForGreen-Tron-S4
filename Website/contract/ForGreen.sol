@@ -225,6 +225,25 @@ function gettokenIdByUri(string memory _tokenURI)
 		return 0;
 	}
 
+
+
+function getEventIdByURI(string memory _eventURI)
+		public
+		view
+		virtual
+		returns (uint256)
+	{
+		for (uint256 i = 0; i < _eventIds; i++) {
+			if (
+				keccak256(bytes(_eventURIs[i][1])) == keccak256(bytes(_eventURI))
+			) {
+				return i;
+			}
+		}
+
+		return 0;
+	}
+
 function getBidIdByUri(string memory _bidURI)
 		public
 		view

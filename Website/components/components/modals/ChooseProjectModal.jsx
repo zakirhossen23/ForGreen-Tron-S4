@@ -26,7 +26,7 @@ export default function ChooseProjectModal({
 				const arr = [];
 				for (let i = 0; i < AllEvents.length; i++) {
 					const value = AllEvents[i];
-					const eventid =Number( await contract.gettokenIdByUri(value).call());
+					const eventid =Number( await contract.getEventIdByURI(value).call());
 					console.log("here");
 					const ISsubmitted = await contract.getCheckSubmittedProjectGrant(grantId,eventid)
 					if (value) {

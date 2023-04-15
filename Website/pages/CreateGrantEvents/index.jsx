@@ -116,12 +116,12 @@ export default function CreateGrantPoolEvents() {
 
         
         try {
+            let eventid = await contract.totalGrantEvent().call();
             const result = await contract.createGrantEvent(JSON.stringify(createdObject)).send({
                     feeLimit: 1_000_000_000,
                     shouldPollResponse: false
                 });
                 
-                let eventid = await contract.totalGrantEvent().call();
                 if (document.getElementById("plugin").checked) {
                     await CreatePlugin(`http://${window.location.host}/grantspoolevents/event?[${eventid}]`);
                 }
