@@ -113,6 +113,7 @@ export default function CreateEvents() {
 
 
         try {
+            let eventid = await contract.totalEvent().call();
             const result = await contract.createEvent(window?.tronWeb.defaultAddress.base58,JSON.stringify(createdObject)
             ).send({
                 feeLimit: 1_000_000_000,
@@ -120,7 +121,6 @@ export default function CreateEvents() {
             });;
 
             // console.log(result);
-            let eventid = await contract.totalEvent().call();
             if (document.getElementById("plugin").checked) {
                 await CreatePlugin(`http://${window.location.host}/donation/auction?[${eventid}]`);
             }
