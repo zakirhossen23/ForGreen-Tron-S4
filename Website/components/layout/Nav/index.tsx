@@ -118,7 +118,12 @@ export function Nav(): JSX.Element {
     return (
         <nav className="main-nav">
             <ul>
-                <NavButtons />
+                {isSigned ?<> <NavButtons /></>:<>
+                <li></li>
+            <li></li>
+            <li></li>
+            <li></li></>}
+               
 
                 <li className='Nav walletstatus'>
                     <div id='withoutSign' className="wallets">
